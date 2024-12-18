@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/on_bording_screens.dart';
 
-import 'home.dart';
+import 'home/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
      routes: {
-      OnBordingScreens.routName:(context)=>OnBordingScreens(),
+      OnBordingScreens.routName:(context)=>const OnBordingScreens(),
        HomeScreen.routName:(context)=>HomeScreen(),
      },
       initialRoute: "/",

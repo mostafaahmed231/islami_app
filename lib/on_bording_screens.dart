@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 
-import 'home.dart';
+import 'home/home.dart';
 
 class OnBordingScreens extends StatelessWidget {
   const OnBordingScreens({super.key});
@@ -143,6 +143,7 @@ class OnBordingScreens extends StatelessWidget {
                 'Welcome To Islmi App',
                 textAlign: TextAlign.center,
                 style: TextStyle(
+
                   color: Color(0xFFE2BE7F),
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
