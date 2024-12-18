@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
      routes: {
-      OnBordingScreens.routName:(context)=>OnBordingScreens(),
+      OnBordingScreens.routName:(context)=>const OnBordingScreens(),
        HomeScreen.routName:(context)=>HomeScreen(),
      },
       initialRoute: "/",
