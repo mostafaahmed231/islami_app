@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
+import 'package:islami_app/cach/cach_helper.dart';
 
 import 'home/home.dart';
 
@@ -29,6 +30,7 @@ class OnBordingScreens extends StatelessWidget {
 
       ),
       onFinish: (){
+        CacheHelper.saveEligibility();
         Navigator.pushNamed(context, HomeScreen.routName);
       },
       trailing: const Text(

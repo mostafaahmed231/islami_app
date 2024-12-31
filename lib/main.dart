@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/cach/cach_helper.dart';
 import 'package:islami_app/on_bording_screens.dart';
 
 import 'home/home.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -13,11 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     routes: {
-      OnBordingScreens.routName:(context)=>const OnBordingScreens(),
-       HomeScreen.routName:(context)=>HomeScreen(),
-     },
-      initialRoute: "/",
+      routes: {
+        OnBordingScreens.routName: (context) => const OnBordingScreens(),
+        HomeScreen.routName: (context) => HomeScreen(),
+      },
+      initialRoute: CacheHelper.getEligibility() == true
+          ? HomeScreen.routName
+          : OnBordingScreens.routName,
     );
   }
 }
