@@ -9,15 +9,26 @@ class suraModel {
       required this.index,
       required this.nameAr,
       required this.nameEn});
+  static int get length => suraNameArabic.length;
 
    static suraModel getSuraModel(int index) {
     return suraModel(
-        numOfVerses: suraVersesNumber[index],
-        index: index,
-        nameAr: suraNameArabic[index],
-        nameEn: suraNameEnglish[index]);
-  }
 
+     nameAr: suraNameArabic[index],
+     nameEn: suraNameEnglish[index],
+     index: index,
+     numOfVerses: suraVersesNumber[index]);
+  }
+  static suraModel getSelectSuraModel(int index) {
+    return suraModel(
+        nameAr: searchResult[index],
+        nameEn: searchResult[index],
+        index: index,
+        numOfVerses: suraVersesNumber[index]);
+
+
+  }
+  static List<String> searchResult =[];
   static List<String> suraNameArabic = [
     "الفاتحه",
     "البقرة",
@@ -367,5 +378,4 @@ class suraModel {
     6
   ];
 
-  static int get length => suraNameArabic.length;
 }

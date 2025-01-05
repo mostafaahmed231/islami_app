@@ -23,19 +23,19 @@ crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
               SizedBox(height: 10,),
-              Text("$model.nameEn", style: TextStyle(
+              Text("${model.nameEn}", style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Colors.black
               ),),
               SizedBox(height: 10,),
-              Text("$model.nameAr", style: TextStyle(
+              Text("${model.nameAr}", style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Colors.black
               ),),
               SizedBox(height: 10,),
-              Text("$model.numOfVerses Verses", style: TextStyle(
+              Text("${model.numOfVerses} Verses", style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Colors.black

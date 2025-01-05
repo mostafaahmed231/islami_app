@@ -4,11 +4,34 @@ import 'package:islami_app/home/tabs/quran_tab/sura_name_item.dart';
 
 import 'sura_item_horizant.dart';
 
+class QuranTab extends StatefulWidget {
+  QuranTab({super.key});
 
-class QuranTab extends StatelessWidget {
-  const QuranTab({super.key});
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
 
+class _QuranTabState extends State<QuranTab> {
+  @override
+  void initState() {
+    super.initState();
+    searchControllar.addListener(onSearch);
+  }
 
+  var searchControllar = TextEditingController();
+
+  onSearch() {
+    suraModel.searchResult.clear();
+    String text = searchControllar.text;
+    if (text.isNotEmpty) {
+      for (String data in suraModel.suraNameEnglish) {
+        if (text.toLowerCase().contains(text.toLowerCase())) {
+          suraModel.searchResult.add(data);
+        }
+      }
+    }
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,19 +41,19 @@ class QuranTab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _searchNameItem(),
-          _suraNameHorizontalList(),
+          if (suraModel.searchResult.isEmpty &&
+              searchControllar.text.isEmpty) ...[_suraNameHorizontalList()],
           _suraNameVertcalList(),
-
-
-
         ],
       ),
     );
   }
-  Widget _searchNameItem(){
+
+  Widget _searchNameItem() {
     return Column(
       children: [
         TextField(
+            controller: searchControllar,
             cursorWidth: 3,
             cursorColor: Color(0xFFE2BE7F),
             style: TextStyle(color: Colors.white),
@@ -62,7 +85,8 @@ class QuranTab extends StatelessWidget {
       ],
     );
   }
-  Widget _suraNameHorizontalList(){
+
+  Widget _suraNameHorizontalList() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -73,19 +97,18 @@ class QuranTab extends StatelessWidget {
         ),
         Container(
           height: 150,
-
           child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return SuraItemHorizant(
-               model: suraModel.getSuraModel(index),
-              );
-            },
-            separatorBuilder: (context, index) => SizedBox(
-              width: 20 ,
-            ),
-            itemCount: suraModel.length
-          ),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return SuraItemHorizant(
+                  model:
+                  suraModel.getSuraModel(index),
+                );
+              },
+              separatorBuilder: (context, index) => SizedBox(
+                    width: 20,
+                  ),
+              itemCount: suraModel.length),
         ),
         SizedBox(
           height: 16,
@@ -93,7 +116,8 @@ class QuranTab extends StatelessWidget {
       ],
     );
   }
-  Widget _suraNameVertcalList(){
+
+  Widget _suraNameVertcalList() {
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,18 +132,21 @@ class QuranTab extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-
-              itemBuilder: (context, index) {
-                return SuraNameItem(
-
-                   model: suraModel.getSuraModel(index),);
-              },
-              itemCount: suraModel.length,
               separatorBuilder: (BuildContext context, int index) => Divider(
                 color: Colors.white,
                 endIndent: 40,
                 indent: 40,
               ),
+              itemBuilder: (context, index) {
+                return SuraNameItem(
+                  model: searchControllar.text.isNotEmpty
+                      ? suraModel.getSelectSuraModel(index)
+                      : suraModel.getSuraModel(index),
+                );
+              },
+              itemCount: searchControllar.text.isNotEmpty
+                  ? suraModel.searchResult.length
+                  : suraModel.length,
             ),
           )
         ],
