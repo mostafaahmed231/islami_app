@@ -23,40 +23,40 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/${getBackgrounName(selsctedIndex)}"),
-                fit: BoxFit.cover)),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            showSelectedLabels: true,
-            showUnselectedLabels: false,
-            currentIndex: selsctedIndex,
-            onTap: (value) {
-              selsctedIndex = value;
-              setState(() {});
-            },
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.black,
-            backgroundColor: Color(0xFFE2BE7F),
-            items: [
-              BottomNavigationBarItem(
-                  icon: _buildNavItem("Vector1", 0), label: "Quran"),
-              BottomNavigationBarItem(
-                  icon: _buildNavItem("Vector2", 1), label: "Hadith"),
-              BottomNavigationBarItem(
-                  icon: _buildNavItem("Vector3", 2), label: "Tasbeh"),
-              BottomNavigationBarItem(
-                  icon: _buildNavItem("Vector4", 3), label: "Radio"),
-              BottomNavigationBarItem(
-                  icon: _buildNavItem("Vector 5", 4), label: "Time"),
-            ],
-          ),
-          body: Column(
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/${getBackgrounName(selsctedIndex)}"),
+              fit: BoxFit.cover)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: true,
+          showUnselectedLabels: false,
+          currentIndex: selsctedIndex,
+          onTap: (value) {
+            selsctedIndex = value;
+            setState(() {});
+          },
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
+          backgroundColor: Color(0xFFE2BE7F),
+          items: [
+            BottomNavigationBarItem(
+                icon: _buildNavItem("Vector1", 0), label: "Quran"),
+            BottomNavigationBarItem(
+                icon: _buildNavItem("Vector2", 1), label: "Hadith"),
+            BottomNavigationBarItem(
+                icon: _buildNavItem("Vector3", 2), label: "Tasbeh"),
+            BottomNavigationBarItem(
+                icon: _buildNavItem("Vector4", 3), label: "Radio"),
+            BottomNavigationBarItem(
+                icon: _buildNavItem("Vector 5", 4), label: "Time"),
+          ],
+        ),
+        body: SafeArea(
+          child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -67,7 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-
     );
   }
 List<Widget>tabs=[

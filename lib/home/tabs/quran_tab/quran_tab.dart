@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/tabs/quran_tab/sura_model/sura_model.dart';
 import 'package:islami_app/home/tabs/quran_tab/sura_name_item.dart';
+import 'package:islami_app/sura_detalis/sura_detalis.dart';
 
 import 'sura_item_horizant.dart';
 
@@ -138,10 +139,16 @@ class _QuranTabState extends State<QuranTab> {
                 indent: 40,
               ),
               itemBuilder: (context, index) {
-                return SuraNameItem(
-                  model: searchControllar.text.isNotEmpty
-                      ? suraModel.getSelectSuraModel(index)
-                      : suraModel.getSuraModel(index),
+                return InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, SuraDetalis.routName,arguments: suraModel.getSuraModel(index));
+
+                  },
+                  child: SuraNameItem(
+                    model: searchControllar.text.isNotEmpty
+                        ? suraModel.getSelectSuraModel(index)
+                        : suraModel.getSuraModel(index),
+                  ),
                 );
               },
               itemCount: searchControllar.text.isNotEmpty

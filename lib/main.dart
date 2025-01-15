@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/cach/cach_helper.dart';
 import 'package:islami_app/on_bording_screens.dart';
+import 'package:islami_app/sura_detalis/sura_detalis.dart';
 
 import 'home/home.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        OnBordingScreens.routName: (context) => const OnBordingScreens(),
+        OnBordingScreens.routName: (context) =>  OnBordingScreens(),
+        SuraDetalis.routName: (context) =>  SuraDetalis(),
         HomeScreen.routName: (context) => HomeScreen(),
       },
       initialRoute: CacheHelper.getEligibility() == true
