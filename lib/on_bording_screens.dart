@@ -13,18 +13,18 @@ class OnBordingScreens extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnBoardingSlider(
 
-      finishButtonText: 'Register',
+      finishButtonText: ' Register',
 
-      finishButtonStyle: const FinishButtonStyle(
-        backgroundColor: Color(0xFFE2BE7F) ,
+      finishButtonStyle:  FinishButtonStyle(
+        backgroundColor:Theme.of(context).primaryColor,
       ),
-      skipTextButton: const Text(
+      skipTextButton:  Text(
 
         'Skip',
 
         style: TextStyle(
           fontSize: 16,
-          color:Color(0xFFE2BE7F) ,
+          color:Theme.of(context).primaryColor,
           fontWeight: FontWeight.w600,
         ),
 
@@ -33,20 +33,20 @@ class OnBordingScreens extends StatelessWidget {
         CacheHelper.saveEligibility();
         Navigator.pushNamed(context, HomeScreen.routName);
       },
-      trailing: const Text(
+      trailing: Text(
         textAlign: TextAlign.center,
         'Islami',
         style: TextStyle(
           fontSize: 16,
-          color: Color(0xFFE2BE7F),
+          color: Theme.of (context).primaryColor,
           fontWeight: FontWeight.w600,
         ),
       ),
 
 
-      controllerColor: const Color(0xFFE2BE7F),
+      controllerColor: Theme.of(context).primaryColor,
       totalPage: 4,
-      headerBackgroundColor: const Color(0xFF202020),
+      headerBackgroundColor:  Color(0xFF202020),
       pageBackgroundColor: Color(0xFF202020),
 
       background: [
@@ -159,7 +159,7 @@ class OnBordingScreens extends StatelessWidget {
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -170,7 +170,7 @@ class OnBordingScreens extends StatelessWidget {
                 'Welcome To Islami.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFE2BE7F),
+                  color: Theme.of(context).primaryColor,
                   fontSize: 24.0,
                   fontWeight: FontWeight.w700,
                 ),
@@ -182,7 +182,7 @@ class OnBordingScreens extends StatelessWidget {
                 'We Are Very Excited To Have You In Our Community',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFE2BE7F),
+                  color: Theme.of(context).primaryColor,
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                 ),
@@ -194,7 +194,7 @@ class OnBordingScreens extends StatelessWidget {
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: const Column(
+          child:  Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -205,7 +205,7 @@ class OnBordingScreens extends StatelessWidget {
                 'Reading the Quran',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFE2BE7F),
+                  color: Theme.of(context).primaryColor,
                   fontSize: 24.0,
                   fontWeight: FontWeight.w600,
                 ),
@@ -217,7 +217,7 @@ class OnBordingScreens extends StatelessWidget {
                 'Read, and your Lord is the Most Generous',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFE2BE7F),
+                  color: Theme.of(context).primaryColor,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
@@ -229,7 +229,7 @@ class OnBordingScreens extends StatelessWidget {
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: const Column(
+          child:  Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -240,7 +240,7 @@ class OnBordingScreens extends StatelessWidget {
                 'Holy Quran Radio',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFE2BE7F),
+                  color: Theme.of(context).primaryColor,
                   fontSize: 24.0,
                   fontWeight: FontWeight.w600,
                 ),
@@ -252,7 +252,7 @@ class OnBordingScreens extends StatelessWidget {
                 'You can listen to the Holy Quran Radio through the application for free and easily',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFE2BE7F),
+                  color:Theme.of(context).primaryColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),

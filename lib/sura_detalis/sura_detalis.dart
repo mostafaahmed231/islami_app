@@ -24,12 +24,10 @@ class _SuraDetalisState extends State<SuraDetalis> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF202020),
-          centerTitle: true,
-          iconTheme: IconThemeData(color: Color(0xFFE2BE7F)),
+
           title: Text(
             model.nameEn,
-            style: TextStyle(color: Color(0xFFE2BE7F)),
+
           ),
         ),
         body: Stack(
@@ -47,7 +45,7 @@ class _SuraDetalisState extends State<SuraDetalis> {
                   child: Text(
                     model.nameAr,
                     style: TextStyle(
-                        color: Color(0xFFE2BE7F),
+                        color: Theme.of(context).primaryColor,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
@@ -65,7 +63,7 @@ class _SuraDetalisState extends State<SuraDetalis> {
                           padding: EdgeInsets.symmetric(vertical: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
-                            border: Border.all(color:Color(0xFFE2BE7F), )
+                            border: Border.all(color:Theme.of(context).primaryColor,)
                           ),
                           child: Directionality(
                             textDirection: TextDirection.rtl,
@@ -76,7 +74,7 @@ class _SuraDetalisState extends State<SuraDetalis> {
                                 TextSpan(
                                 text: "${verases[index]}",
                                   style: TextStyle(
-                                      color: Color(0xFFE2BE7F),
+                                      color:Theme.of(context).primaryColor,
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),

@@ -29,19 +29,14 @@ class _HomeScreenState extends State<HomeScreen> {
               image: AssetImage("assets/images/${getBackgrounName(selsctedIndex)}"),
               fit: BoxFit.cover)),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+
         bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          showSelectedLabels: true,
-          showUnselectedLabels: false,
           currentIndex: selsctedIndex,
           onTap: (value) {
             selsctedIndex = value;
             setState(() {});
           },
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.black,
-          backgroundColor: Color(0xFFE2BE7F),
+
           items: [
             BottomNavigationBarItem(
                 icon: _buildNavItem("Vector1", 0), label: "Quran"),

@@ -4,6 +4,7 @@ import 'package:islami_app/on_bording_screens.dart';
 import 'package:islami_app/sura_detalis/sura_detalis.dart';
 
 import 'home/home.dart';
+import 'my_theme_data.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,9 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme:MyThemeData.lightTheme ,
+        darkTheme:MyThemeData.darkTheme ,
+
+      themeMode: ThemeMode.light,
       routes: {
-        OnBordingScreens.routName: (context) =>  OnBordingScreens(),
-        SuraDetalis.routName: (context) =>  SuraDetalis(),
+        OnBordingScreens.routName: (context) => OnBordingScreens(),
+        SuraDetalis.routName: (context) => SuraDetalis(),
         HomeScreen.routName: (context) => HomeScreen(),
       },
       initialRoute: CacheHelper.getEligibility() == true

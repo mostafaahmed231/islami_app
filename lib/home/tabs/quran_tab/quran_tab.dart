@@ -56,26 +56,26 @@ class _QuranTabState extends State<QuranTab> {
         TextField(
             controller: searchControllar,
             cursorWidth: 3,
-            cursorColor: Color(0xFFE2BE7F),
+            cursorColor:Theme.of(context).primaryColor,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
               hintText: "Sura Name",
               hintStyle: TextStyle(color: Colors.white),
               prefixIcon: ImageIcon(
                 AssetImage("assets/images/Vector1.png"),
-                color: Color(0xFFE2BE7F),
+                color: Theme.of(context).primaryColor,
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: Color(0xFFE2BE7F),
+                  color: Theme.of(context).primaryColor,
                   width: 2,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: Color(0xFFE2BE7F),
+                  color: Theme.of(context).primaryColor,
                   width: 2,
                 ),
               ),
